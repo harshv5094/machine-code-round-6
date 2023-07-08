@@ -1,4 +1,12 @@
+import List from "../components/List";
+import { useState } from "react";
+
 function Home() {
+  const [cuisine, setCuisine] = useState(null);
+
+  function getData(cuisine_id) {
+    setCuisine(cuisine_id)
+  }
   return (
     <div className="App">
       <div
@@ -21,13 +29,14 @@ function Home() {
         }}>
           Select Your Cuisine
           <br />
-          <button className="MenuButton">Italian</button>
-          <button className="MenuButton">Mexican</button>
-          <button className="MenuButton">Chinese</button>
-          <button className="MenuButton">Indian</button>
+          <button onClick={() => getData(1)} className="MenuButton">Italian</button>
+          <button onClick={() => getData(2)} className="MenuButton">Mexican</button>
+          <button onClick={() => getData(3)} className="MenuButton">Chinese</button>
+          <button onClick={() => getData(4)} className="MenuButton">Indian</button>
         </span>
         <br />
       </div>
+      <List search_id={cuisine} />
     </div>
   );
 }
