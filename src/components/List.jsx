@@ -1,6 +1,5 @@
 import { restaurantsData } from "../db/database"
 
-
 function List({ search_id }) {
   return (
     <div >
@@ -15,11 +14,11 @@ function List({ search_id }) {
               alignItems: "center",
             }}>
               {
-                restaurant.menu.map((item, index) => {
+                restaurant.menu.map((item) => {
                   return (
                     <div style={{
                       margin: "1rem",
-                    }} key={index} className="MenuItemCard">
+                    }} key={item.name} className="MenuItemCard">
                       <img className="ImageCard" src={item.imgSrc} alt={item.name} width="200px" />
                       <span style={{
                         fontSize: "20px",
